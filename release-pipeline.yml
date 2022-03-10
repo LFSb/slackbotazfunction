@@ -32,4 +32,4 @@ jobs:
           #     destinationFolder: '$(agent.builddirectory)'
           #     cleanDestinationFolder: false
           - script: |  
-              cat '$(resources.pipeline.slackbotazfunction.runID)'
+              cat $(resources.pipeline.slackbotazfunction.runID)
