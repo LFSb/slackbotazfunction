@@ -10,6 +10,9 @@ resources:
   pipelines:
     - pipeline: releasepipeline
       source: slackbotazfunction
+      trigger:
+        branches:
+          - main
 
 jobs:
 - deployment: Deploy
