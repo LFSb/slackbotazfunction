@@ -21,7 +21,7 @@ jobs:
     runOnce:
       deploy:
         steps:
-          - download: myappbuild
+          - download: slackbotazfunction
             artifact: drop  
           - task: ExtractFiles@1
             inputs:
