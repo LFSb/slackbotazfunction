@@ -21,5 +21,12 @@ jobs:
     runOnce:
       deploy:
         steps:
-          script: |
-            echo 'Hello World!'
+          - download: myappbuild
+            artifact: drop  
+          - task: ExtractFiles@1
+            inputs:
+              archiveFilePatterns: '$(PIPELINE.WORKSPACE)/myappbuild/drop/$(resources.pipeline.slackbotazfunction.runID).zip'
+              destinationFolder: '$(agent.builddirectory)'
+              cleanDestinationFolder: false
+          - script: |  
+              cat $(agent.builddirectory)/setup.sh
