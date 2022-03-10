@@ -24,12 +24,12 @@ jobs:
     runOnce:
       deploy:
         steps:
-          - download: slackbotazfunction
-            artifact: drop  
-          - task: ExtractFiles@1
-            inputs:
-              archiveFilePatterns: '$(PIPELINE.WORKSPACE)/slackbotazfunction/drop/$(resources.pipeline.slackbotazfunction.runID).zip'
-              destinationFolder: '$(agent.builddirectory)'
-              cleanDestinationFolder: false
+          # - download: slackbotazfunction
+          #   artifact: drop  
+          # - task: ExtractFiles@1
+          #   inputs:
+          #     archiveFilePatterns: '$(PIPELINE.WORKSPACE)/slackbotazfunction/drop/$(resources.pipeline.slackbotazfunction.runID).zip'
+          #     destinationFolder: '$(agent.builddirectory)'
+          #     cleanDestinationFolder: false
           - script: |  
-              cat $(agent.builddirectory)/setup.sh
+              cat '$(resources.pipeline.slackbotazfunction.runID)'
