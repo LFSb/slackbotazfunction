@@ -25,4 +25,4 @@ jobs:
       deploy:
         steps:
           - script: |  
-              cat 'Hello world!'
+              echo 'Hello world!'
